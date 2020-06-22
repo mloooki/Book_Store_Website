@@ -52,7 +52,19 @@
          </div>
          <div style = "position: absolute ; top : 75% ; right : 15%">
 		 
+        <?php 
+        $con = mysqli_connect("localhost","root","","bookstore");
+        $res = mysqli_query($con,"SELECT * FROM books where Type =1");
+        while($row = mysqli_fetch_array($res)) {
+            ?> <img src="upload/<?php echo $row["Photo"]; ?>" height="150" width="150"> <?php 
+             echo "Price : "; echo $row["Price"];
+            echo "  Type:"; echo $row["Type"];
 
+
+            
+        }
+		
+        ?>
 		 </div>
          <script>
                 var myIndex = 0;
